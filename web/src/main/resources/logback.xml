@@ -8,6 +8,7 @@
 	</appender>
 
 	<logger name="com.richo" level="INFO"/>
+	<!-- <logger name="org.apache.cxf" level="ALL" /> -->
 
 	<root level="info">
 		<appender-ref ref="STDOUT"/>

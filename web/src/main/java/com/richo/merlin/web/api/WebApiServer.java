@@ -12,9 +12,24 @@ public class WebApiServer implements WebApi
 	private final Logger logger = LoggerFactory.getLogger(getClass());
 
 	@Override
-	public String hello(String msg)
+	public String hello()
 	{
+		String msg = "asd";
 		logger.info("hello called with arg {}" + msg);
 		return msg;
+	}
+
+	@Override
+	public String del()
+	{
+		logger.info("delete called");
+		return "asdf";
+	}
+
+	@Override
+	public String getStuff(String id)
+	{
+		logger.info("get called with args {}", id);
+		return "asdf";
 	}
 }

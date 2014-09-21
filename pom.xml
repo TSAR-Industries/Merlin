@@ -16,8 +16,11 @@
 		<!-- logging -->
 		<slf4j.version>${slf4j-api.version}</slf4j.version>
 		<logback.version>1.1.2</logback.version>
-		<spring.version>4.0.6.RELEASE</spring.version>
-		<cxf.version>2.7.3</cxf.version>
+
+		<!-- api stuff -->
+		<cxf.version>3.0.1</cxf.version>
+		<rs.api.version>2.0.1</rs.api.version>
+
 		<junit.version>4.12-beta-1</junit.version>
 		<guice.version>4.0-beta4</guice.version>
 		<slf4j-api.version>1.7.7</slf4j-api.version>
@@ -41,8 +44,8 @@
 		<dependencies>
 			<dependency>
 				<groupId>javax.ws.rs</groupId>
-				<artifactId>jsr311-api</artifactId>
-				<version>${jsr311-api.version}</version>
+				<artifactId>javax.ws.rs-api</artifactId>
+				<version>${rs.api.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.richo.merlin</groupId>
@@ -75,43 +78,6 @@
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-rt-frontend-jaxrs</artifactId>
 				<version>${cxf.version}</version>
-			</dependency>
-
-			<!-- spring -->
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-web</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-core</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-webmvc</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-beans</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-aop</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-context</artifactId>
-				<version>${spring.version}</version>
 			</dependency>
 
 			<dependency>
