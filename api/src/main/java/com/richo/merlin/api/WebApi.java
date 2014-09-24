@@ -1,5 +1,8 @@
 package com.richo.merlin.api;
 
+import com.richo.merlin.api.model.Player;
+import com.richo.merlin.api.model.Room;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
@@ -7,14 +10,18 @@ import javax.ws.rs.core.MediaType;
 public interface WebApi
 {
 	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	String hello();
-
-	@DELETE
-	String del();
+	@Path("/room")
+	@Produces ( "application/json" )
+	Room[] getAllRooms();
 
 	@GET
-	@Path("/{id}/")
-	String getStuff(@PathParam("id") String id);
+	@Path("/room/{id}")
+	@Produces ( "application/json" )
+	Room getRoom(@PathParam("id") String id);
+
+	@GET
+	@Path("/room/{id}/player")
+	@Produces ( "application/json" )
+	Player[] getAllPlayersInRoom(@PathParam("id") String id);
 }
 	

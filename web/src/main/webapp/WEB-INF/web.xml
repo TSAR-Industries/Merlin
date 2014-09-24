@@ -16,6 +16,10 @@
 			<param-name>jaxrs.address</param-name>
 			<param-value>/</param-value>
 		</init-param>
+		<init-param>
+			<param-name>jaxrs.providers</param-name>
+			<param-value>com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider</param-value>
+		</init-param>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CXFServlet</servlet-name>
