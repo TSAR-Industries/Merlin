@@ -18,7 +18,7 @@
 		</init-param>
 		<init-param>
 			<param-name>jaxrs.providers</param-name>
-			<param-value>com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider</param-value>
+			<param-value>com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider, org.apache.cxf.jaxrs.model.wadl.WadlGenerator</param-value>
 		</init-param>
 	</servlet>
 	<servlet-mapping>
