@@ -18,6 +18,10 @@
 			<artifactId>api</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>com.richo.merlin</groupId>
+			<artifactId>merlin-backend</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 		</dependency>

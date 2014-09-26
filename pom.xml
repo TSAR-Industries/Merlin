@@ -54,6 +54,11 @@
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
+				<groupId>com.richo.merlin</groupId>
+				<artifactId>merlin-backend</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>javax</groupId>
 				<artifactId>javaee-web-api</artifactId>
 				<version>${javaee-web-api.version}</version>

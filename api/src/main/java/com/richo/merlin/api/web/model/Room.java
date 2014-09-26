@@ -1,4 +1,4 @@
-package com.richo.merlin.api.model;
+package com.richo.merlin.api.web.model;
 
 /**
  * Created by Richo on 2014-09-24.

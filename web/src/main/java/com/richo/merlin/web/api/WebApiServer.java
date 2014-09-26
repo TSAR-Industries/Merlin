@@ -1,44 +1,48 @@
 package com.richo.merlin.web.api;
 
-import com.richo.merlin.api.WebApi;
-import com.richo.merlin.api.model.Player;
-import com.richo.merlin.api.model.Room;
+import com.richo.merlin.api.backend.BackendApi;
+import com.richo.merlin.api.web.WebApi;
+import com.richo.merlin.api.web.model.Player;
+import com.richo.merlin.api.web.model.Room;
+import com.richo.merlin.backend.inject.BackendModule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Created by Richo on 2014-09-01.
- */
 public class WebApiServer implements WebApi
 {
 	private final Logger logger = LoggerFactory.getLogger(getClass());
+
+	private final BackendApi api;
+
+	public WebApiServer()
+	{
+		api = BackendModule.getInstance().getInstance(BackendApi.class);
+	}
 
 	@Override
 	public Room[] getAllRooms()
 	{
 		logger.info("Get all rooms");
-		return new Room[]{new Room(1, "Richo's room"), new Room(2, "Anders' room")};
+		return api.getAllRooms();
 	}
 
 	@Override
-	public Room getRoom(String id)
+	public Room getRoom(final int id)
 	{
-		logger.info("Get room with id {}", id);
-		return new Room(1, "room_name");
+		return api.getRoom(id);
 	}
 
 	@Override
 	public Room createRoom(String roomName)
 	{
-		logger.info("User asked to create room {}", roomName);
-		return new Room(1337, roomName);
+		return api.createRoom(roomName);
 	}
 
 	@Override
 	public Player[] getAllPlayersInRoom(String id)
 	{
-		logger.info("Get all players in room {}", id);
-		return new Player[]{new Player("Anders"), new Player("Berta-Åsa")};
+		logger.warn("getAllPlayersInRoom is not implemented");
+		return new Player[]{};
 	}
 
 	@Override

@@ -1,7 +1,7 @@
-package com.richo.merlin.api;
+package com.richo.merlin.api.web;
 
-import com.richo.merlin.api.model.Player;
-import com.richo.merlin.api.model.Room;
+import com.richo.merlin.api.web.model.Player;
+import com.richo.merlin.api.web.model.Room;
 
 import javax.ws.rs.*;
 
@@ -16,7 +16,7 @@ public interface WebApi
 	@GET
 	@Path("/room/{id}")
 	@Produces("application/json")
-	Room getRoom(@PathParam("id") String id);
+	Room getRoom(@PathParam("id") int id);
 
 	@POST
 	@Path("/room")
