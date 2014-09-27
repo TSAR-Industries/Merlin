@@ -2,8 +2,7 @@ var username;
 
 $(function()
 {
-	addClickEventToRoomList();
-	setNameInputFormBehaviour();
+	setupEventListeners();
 
 	Api.getRooms(function(data)
 	{
@@ -16,6 +15,23 @@ $(function()
 	});
 });
 
+function setupEventListeners()
+{
+	addClickEventToRoomList();
+	addClickEventToCreateNewRoomButton();
+	setNameInputFormBehaviour();
+	setCreateNewRoomFormBehaviour();
+}
+
+function addClickEventToCreateNewRoomButton()
+{
+	$("#createNewRoomButton").click(function()
+	{
+		switchToDiv("#createNewRoomDiv");
+	});
+
+}
+
 function addClickEventToRoomList()
 {
 	document.getElementById("roomList").addEventListener("click",function(e)
@@ -26,6 +42,13 @@ function addClickEventToRoomList()
 	});
 }
 
+function switchToDiv(div)
+{
+	$(".mainDiv").hide();
+	$(div).show();
+}
+
+
 function setNameInputFormBehaviour()
 {
 	$("#nameSubmitForm").submit(function(event)
@@ -35,24 +58,39 @@ function setNameInputFormBehaviour()
 	});
 }
 
+function setCreateNewRoomFormBehaviour()
+{
+	$("#createNewRoomForm").submit(function()
+	{
+		const roomName = $("#newRoomInput").val();
+		createNewRoom(roomName);
+		event.preventDefault();
+	});
+}
+
 function submitName()
 {
 	username = $("#nameInput").val();
-	console.log("Submit name " + username);
-	$("#inputNameDiv").hide();
-	$("#roomJoinDiv").show();
+	switchToDiv("#roomJoinDiv");
 }
 
 function joinRoom(roomId)
 {
 	Api.joinRoom(roomId, username, function()
 	{
-		$("#roomJoinDiv").hide();
-		$("#insideRoomDiv").show();
+		switchToDiv("#insideRoomDiv");
 		Api.getRoom(roomId, function(room)
 		{
 			updateRoom(room);
 		});
+	});
+}
+
+function createNewRoom(roomName)
+{
+	Api.createRoom(roomName, function(room)
+	{
+		joinRoom(room.id);
 	});
 }
 

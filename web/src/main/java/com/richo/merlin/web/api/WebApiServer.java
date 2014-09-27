@@ -28,6 +28,13 @@ public class WebApiServer implements WebApi
 	}
 
 	@Override
+	public Room createRoom(String roomName)
+	{
+		logger.info("User asked to create room {}", roomName);
+		return new Room(1337, roomName);
+	}
+
+	@Override
 	public Player[] getAllPlayersInRoom(String id)
 	{
 		logger.info("Get all players in room {}", id);

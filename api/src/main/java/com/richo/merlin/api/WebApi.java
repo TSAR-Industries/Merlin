@@ -18,6 +18,11 @@ public interface WebApi
 	@Produces("application/json")
 	Room getRoom(@PathParam("id") String id);
 
+	@POST
+	@Path("/room")
+	@Produces("application/json")
+	Room createRoom(String roomName);
+
 	@GET
 	@Path("/room/{id}/player")
 	@Produces("application/json")

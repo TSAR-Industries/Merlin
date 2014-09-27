@@ -8,7 +8,7 @@
 <div id="headerDiv">
     <h2 id="welcomeHeader">Welcome to Merlin</h2>
 </div>
-<div id="inputNameDiv">
+<div class="mainDiv" id="inputNameDiv">
     <h3>Please enter your name</h3>
 
     <form id="nameSubmitForm">
@@ -16,12 +16,20 @@
         <input type="submit" id="nameInputSubmit" value="Confirm"/>
     </form>
 </div>
-<div id="roomJoinDiv" style="display:none">
+<div class="mainDiv" id="roomJoinDiv" style="display:none">
     <h3>Please select a room</h3>
     <ul id="roomList"></ul>
+    <button id="createNewRoomButton">Create new room</button>
     <br/>
 </div>
-<div id="insideRoomDiv" style="display:none">
+<div class="mainDiv" id="createNewRoomDiv" style="display:none">
+    <h3>Create new room</h3>
+    <form id="createNewRoomForm">
+        <input type="text" name="roomName" id="newRoomInput" /> <br/>
+        <input type="submit" id="createNewRoomSubmit" value="Create room" />
+    </form>
+</div>
+<div class="mainDiv" id="insideRoomDiv" style="display:none">
     <h3 id="insideRoomHeader">Inside room</h3>
     <div id="mainGameChatWindowDiv">
 

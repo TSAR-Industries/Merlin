@@ -16,13 +16,18 @@ var Api = (function()
     	});
     };
 
+    pub.createRoom = function(roomName, callback)
+    {
+    	$.post("api/web/room", roomName, function(data)
+    	{
+    		callback(data);
+    	});
+    }
+
 	pub.joinRoom = function(roomId, username, callback)
 	{
-		console.log("player " + username + " joining room " + roomId);
 		$.post("api/web/room/" + roomId + "/player", username, function(data)
 		{
-			console.log("Success");
-			console.log(data);
 			callback();
 		});
 	};
