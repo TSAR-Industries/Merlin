@@ -2,6 +2,7 @@ package com.richo.merlin.backend;
 
 import com.richo.merlin.api.web.model.Player;
 import com.richo.merlin.api.web.model.PlayerId;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,7 +26,8 @@ public class PlayerManager
 		playerIdGenerator = new AtomicLong();
 	}
 
-	public Player create(String playerName)
+	@NotNull
+	public Player create(@NotNull final String playerName)
 	{
 		final long id = playerIdGenerator.incrementAndGet();
 		final Player player = new Player(new PlayerId(id), playerName);
